@@ -11,7 +11,7 @@ class OtpVerificationPage extends StatefulWidget {
 class _OtpVerificationPageState extends State<OtpVerificationPage> {
   @override
   Widget build(BuildContext context) {
-    final defautpinTheme = PinTheme(
+    final defaultPinTheme = PinTheme(
       width: 56,
       height: 56,
       textStyle: const TextStyle(
@@ -23,17 +23,18 @@ class _OtpVerificationPageState extends State<OtpVerificationPage> {
         borderRadius: BorderRadius.circular(20),
       ),
     );
-    final focusedPinTheme = defautpinTheme.copyDecorationWith(
+    final focusedPinTheme = defaultPinTheme.copyDecorationWith(
       border: Border.all(
         color: const Color.fromRGBO(114, 178, 238, 1),
       ),
     );
 
-    final submittedPinTheme = defautpinTheme.copyWith(
-      decoration: defautpinTheme.decoration?.copyWith(
+    final submittedPinTheme = defaultPinTheme.copyWith(
+      decoration: defaultPinTheme.decoration?.copyWith(
         color: const Color.fromRGBO(234, 239, 234, 1),
       ),
     );
+
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
@@ -50,7 +51,7 @@ class _OtpVerificationPageState extends State<OtpVerificationPage> {
         elevation: 0,
       ),
       body: Container(
-        margin: EdgeInsets.only(left: 25, right: 25),
+        margin: const EdgeInsets.only(left: 25, right: 25),
         alignment: Alignment.center,
         child: SingleChildScrollView(
           child: Column(
@@ -63,12 +64,12 @@ class _OtpVerificationPageState extends State<OtpVerificationPage> {
               ),
               const SizedBox(height: 25),
               const Text(
-                "OTP Verificaion",
+                "OTP Verification",
                 style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 10),
               const Text(
-                "We need tp register your phone without getting started!!",
+                "We need to register your phone without getting started!",
                 style: TextStyle(
                   fontSize: 16,
                 ),
@@ -82,7 +83,7 @@ class _OtpVerificationPageState extends State<OtpVerificationPage> {
               ),
               const SizedBox(height: 30),
               const Text(
-                "Don't Get OTP?  Rsend",
+                "Don't Get OTP? Resend",
                 style: TextStyle(
                   fontSize: 16,
                 ),
@@ -99,29 +100,15 @@ class _OtpVerificationPageState extends State<OtpVerificationPage> {
                       borderRadius: BorderRadius.circular(10),
                     ),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(context, 'home');
+                  },
                   child: const Text(
                     "Verify",
                     style: TextStyle(color: Colors.white),
                   ),
                 ),
               ),
-              // Row(
-              //   children: [
-              //     TextButton(
-              //         onPressed: () {
-              //           Navigator.pushNamedAndRemoveUntil(
-              //             context,
-              //             'phone',
-              //             (route) => false,
-              //           );
-              //         },
-              //         child: Text(
-              //           "Edit Phone Number ?",
-              //           style: TextStyle(color: Colors.black),
-              //         ))
-              //   ],
-              // )
             ],
           ),
         ),

@@ -9,6 +9,7 @@ class PhonVerifyPage extends StatefulWidget {
 
 class _PhonVerifyPageState extends State<PhonVerifyPage> {
   TextEditingController countryController = TextEditingController();
+
   @override
   void initState() {
     countryController.text = "+91";
@@ -74,7 +75,7 @@ class _PhonVerifyPageState extends State<PhonVerifyPage> {
               ),
               const SizedBox(height: 10),
               const Text(
-                "we need to register your phone without getting started!",
+                "We need to register your phone without getting started!",
                 style: TextStyle(
                   fontSize: 16,
                 ),
